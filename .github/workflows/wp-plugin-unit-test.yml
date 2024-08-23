@@ -22,8 +22,8 @@ jobs:
       fail-fast: false
 
       matrix:
-        os: [ ubuntu-20.04 ]
-        php: [ '7.4', '8.0', '8.1', '8.2' ]
+        os: [ ubuntu-22.04 ]
+        php: [ '7.4', '8.0', '8.1', '8.2', '8.3' ]
         wordpress: [ latest, nightly, '6.0' ]
         multisite: [ 0 ]
 
@@ -41,7 +41,7 @@ jobs:
           MYSQL_ROOT_PASSWORD: root
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup PHP v${{ matrix.php }}
         uses: shivammathur/setup-php@v2
