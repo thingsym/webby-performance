@@ -113,7 +113,7 @@ class Sanitize {
 	 */
 	public static function sanitize_select( $input, $setting ) {
 		add_filter( 'sanitize_key', [ 'Better_Website_Performance\Customizer\Sanitize', 'sanitize_key' ], 10, 2 );
-		$input   = sanitize_key( $input );
+		$input = sanitize_key( $input );
 		remove_filter( 'sanitize_key', [ 'Better_Website_Performance\Customizer\Sanitize', 'sanitize_key' ], 10, 2 );
 
 		$choices = $setting->manager->get_control( $setting->id )->choices;
